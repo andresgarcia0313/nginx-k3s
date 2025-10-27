@@ -311,7 +311,7 @@ kubectl get ingress nginx -n nginx-namespace
 
 # Verificar DNS apunta correctamente
 ADDRESS=$(kubectl get ingress nginx -n nginx-namespace -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
-DNS=$(dig +short nginx.negociapp.com | tail -1)
+DNS=$(dig +short app.negociapp.com | tail -1)
 echo "Ingress: $ADDRESS | DNS: $DNS"
 # Deben coincidir
 ```
@@ -330,12 +330,12 @@ kubectl get secret nginx-tls -n nginx-namespace
 ### Después del Paso 7 (Redirección)
 ```bash
 # Probar redirección
-curl -I http://nginx.negociapp.com
+curl -I http://app.negociapp.com
 # Debe devolver: HTTP/1.1 301 Moved Permanently
-# Location: https://nginx.negociapp.com
+# Location: https://app.negociapp.com
 
 # Probar HTTPS
-curl -I https://nginx.negociapp.com
+curl -I https://app.negociapp.com
 # Debe devolver: HTTP/2 200
 ```
 

@@ -10,7 +10,7 @@ metadata:
 spec:
   ingressClassName: traefik
   rules:
-    - host: nginx.negociapp.com
+    - host: app.negociapp.com
       http:
         paths:
           - path: /
@@ -22,5 +22,5 @@ spec:
                   number: 80
   tls:
     - hosts:
-        - nginx.negociapp.com
+        - app.negociapp.com
       secretName: nginx-tls

@@ -343,12 +343,12 @@ kubectl get challenge -n nginx-namespace
 ### Después Fase 4 (Redirección activa)
 ```bash
 # Probar redirección
-curl -I http://nginx.negociapp.com
+curl -I http://app.negociapp.com
 # HTTP/1.1 301 Moved Permanently
-# Location: https://nginx.negociapp.com
+# Location: https://app.negociapp.com
 
 # Probar HTTPS
-curl -I https://nginx.negociapp.com
+curl -I https://app.negociapp.com
 # HTTP/2 200
 ```
 
